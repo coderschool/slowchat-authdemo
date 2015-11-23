@@ -1,0 +1,14 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users-wrapper {
+  .form-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .container-fluid {
+      min-width: 100vw;
+    }
+  }  
+}

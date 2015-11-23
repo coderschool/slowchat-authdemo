@@ -1,0 +1,30 @@
+<div class="users-wrapper">
+  <div class="form-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <%= form_for(@user) do |f| %>
+            <h2 class="form-signin-heading">Sign Up</h2>
+            <% if @user.errors.any? %>
+              <div id="error-explanation">
+                <div class="alert alert-danger">
+                  The form contains <%= pluralize(@user.errors.count, "error") %>.
+                </div>
+                <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= f.text_field :name, placeholder: "Email", class: "form-control" %>
+            <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+            <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
+            <br/>
+            <%= f.submit "Create Account", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
