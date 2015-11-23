@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     if @user.save
       # We will do something here
       flash[:notice] = "Successfully logged in!"
-      redirect_to '/'
+      session[:user_id] = @user.id
+      redirect_to messages_path
     else
       render 'new'
     end

@@ -1,0 +1,25 @@
+<div class="sessions-wrapper">
+  <div class="form-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <%= flash_messages %>  
+          <%= form_for(:session, url: login_path) do |f| %>
+            <h2 class="form-signin-heading">Log In</h2>
+            <% if @error.present? %>
+              <div id="error-explanation">
+                <div class="alert alert-danger">
+                   Your username and password are incorrect.
+                 </div>
+               </div>
+            <% end %>
+            <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+            <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+            <br/>
+            <%= f.submit "Log In", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
