@@ -4,4 +4,14 @@
       <h1> Hello, <%= current_user.try(:name) %> </h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @messages.empty? %>
+        <h2> NO MESSAGES </h2>
+      <% else %>
+        <h2> Messages </h2>
+        <%= render @messages %>
+      <% end %>
+    </div>  
+  </div>  
 </div>
